@@ -1,6 +1,9 @@
 import { io } from "socket.io-client";
 
-// 連接到你後端啟動的 3000 埠口
-const socket = io("http://localhost:3000"); 
+const URL=window.location.hostname.includes("localhost")
+    ? "http://localhost:3001"
+    : "https://final-poker-casino.onrender.com";
 
+
+const socket = io(URL);
 export default socket;
