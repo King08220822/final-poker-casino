@@ -218,12 +218,12 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted, reactive, watch } from 'vue';
-import PlayerSlot from './PlayerSlot.vue'; 
-import socket from '../services/socket'; 
+import { computed, onMounted, onUnmounted, reactive, ref } from 'vue';
+import socket from '../services/socket';
+import PlayerSlot from './PlayerSlot.vue';
 
 // ▼▼▼ 【新增】引入聲音管理器 ▼▼▼
-import { playCharacterSound, toggleGlobalMute, audioState } from '../services/AudioManager';
+import { audioState, playCharacterSound, toggleGlobalMute } from '../services/AudioManager';
 
 const props = defineProps(['roomData', 'roomId']);
 const emit = defineEmits(['leave']);
@@ -693,6 +693,7 @@ const sendAction = (type, amount = 0) => {
 
 .winner-name { color: white; font-size: 1.5rem; font-weight: bold; }
 .win-amount { color: #f1c40f; font-size: 1.5rem; font-weight: 900; margin-left: 10px;}
+.hand-type-badge { background: #f1c40f; color: white; padding: 5px 10px; border-radius: 10px; font-size: 0.8rem; font-weight: bold; }
 
 .card-section {
   margin-top: 10px;
